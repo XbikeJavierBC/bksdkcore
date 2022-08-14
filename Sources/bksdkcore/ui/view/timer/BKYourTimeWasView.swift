@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 import TinyConstraints
 
 private enum BKYourTimeWasButton: Int {
@@ -165,6 +166,20 @@ public class BKYourTimeWasView: UIView {
         return seconds < 10 ? "0\(seconds)" : "\(seconds)"
     }
     
+    private func fillData(distance: CLLocationDistance, time: Int) {
+        let (h,m,s) = self.hmsFrom(seconds: time)
+        
+        let hours   = self.getStringFrom(seconds: h)
+        let minutes = self.getStringFrom(seconds: m)
+        let seconds = self.getStringFrom(seconds: s)
+        
+        self.timerLabel.text = "\(hours) : \(minutes) : \(seconds)"
+        
+        let kilometers = distance * 0.001
+        
+        self.distanceLabel.text = String(format: "%.2f km", kilometers)
+    }
+    
     //MARK: IBActions
     @IBAction func buttonAction(_ sender: UIButton) {
         if let buttonType = BKYourTimeWasButton(rawValue: sender.tag) {
@@ -180,7 +195,9 @@ public class BKYourTimeWasView: UIView {
         }
     }
     
-    public func show() {
+    public func show(distance: CLLocationDistance, time: Int) {
+        self.fillData(distance: distance, time: time)
+        
         guard let window = UIApplication.shared.windows.first else { return }
         
         let statusBarHeiht = UIApplication.shared.statusBarFrame.height

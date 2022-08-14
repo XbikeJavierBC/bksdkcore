@@ -18,6 +18,7 @@ public enum BKSdkCoreLocalization: String {
     case delete
     case progressStored
     case ok
+    case sorryNoProgressList
    
     public var localize: String {
         self.localizedString(

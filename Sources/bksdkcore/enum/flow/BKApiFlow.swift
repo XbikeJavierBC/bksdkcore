@@ -18,6 +18,8 @@ public enum BKApiFlow: Int {
     case pageOnBoardingControl
     
     case currentRide
+    case myProgress
+    case detailProgress
     
     case dashboard
 }

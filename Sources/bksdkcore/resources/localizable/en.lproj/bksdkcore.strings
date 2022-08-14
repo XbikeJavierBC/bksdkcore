@@ -16,3 +16,4 @@
 "delete"            = "DELETE";
 "progressStored"    = "Your progress has been\ncorrectly stored!";
 "ok"                = "OK";
+"sorryNoProgressList" = "At the moment you have no registered progress, register a raid in the Current Ride section";

@@ -16,6 +16,7 @@ private enum BKTimerButton: Int {
 public protocol BKTimerViewDelegate: AnyObject {
     func didStartSelect(view: BKTimerView)
     func didStopSelect(view: BKTimerView)
+    func didUpdateTime(time: Int)
 }
 
 public class BKTimerView: UIView {
@@ -151,6 +152,8 @@ public class BKTimerView: UIView {
         let seconds = self.getStringFrom(seconds: s)
         
         self.timerTitleLabel.text = "\(hours) : \(minutes) : \(seconds)"
+        
+        self.delegate?.didUpdateTime(time: self.counter)
     }
     
     private func stopTimer() {

@@ -16,3 +16,4 @@
 "delete"            = "ELIMINAR";
 "progressStored"    = "¡Tu progreso ha sido\nalmacenado correctamente!";
 "ok"                = "OK";
+"sorryNoProgressList" = "por el momento no tiene progresos registrados, registra un viaje en la sección Paseo Actual";
