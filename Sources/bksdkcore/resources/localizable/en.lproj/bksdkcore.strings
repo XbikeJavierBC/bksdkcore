@@ -6,7 +6,13 @@
   Copyright © 2020 GoNet. All rights reserved.
 */
 
-"accept"    = "Accep";
-"error"     = "Error";
-"start"         = "START";
-"stop"          = "STOP";
+"accept"            = "Accep";
+"error"             = "Error";
+"start"             = "START";
+"stop"              = "STOP";
+"yourTimeWas"       = "Your time was";
+"distance"          = "Distance";
+"store"             = "STORE";
+"delete"            = "DELETE";
+"progressStored"    = "Your progress has been\ncorrectly stored!";
+"ok"                = "OK";

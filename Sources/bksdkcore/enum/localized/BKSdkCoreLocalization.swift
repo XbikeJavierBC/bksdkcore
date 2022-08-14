@@ -12,6 +12,12 @@ public enum BKSdkCoreLocalization: String {
     case error
     case start
     case stop
+    case yourTimeWas
+    case distance
+    case store
+    case delete
+    case progressStored
+    case ok
    
     public var localize: String {
         self.localizedString(

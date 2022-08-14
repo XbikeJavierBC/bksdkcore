@@ -14,8 +14,8 @@ private enum BKTimerButton: Int {
 }
 
 public protocol BKTimerViewDelegate: AnyObject {
-    func didStartSelect()
-    func didStopSelect()
+    func didStartSelect(view: BKTimerView)
+    func didStopSelect(view: BKTimerView)
 }
 
 public class BKTimerView: UIView {
@@ -179,7 +179,7 @@ public class BKTimerView: UIView {
                     sender.isSelected = true
                     self.restartComponents()
                     self.startTimer()
-                    self.delegate?.didStartSelect()
+                    self.delegate?.didStartSelect(view: self)
                 }
             }
             else if buttonType == .stop {
@@ -188,7 +188,7 @@ public class BKTimerView: UIView {
                     sender.isSelected = true
                     
                     self.stopTimer()
-                    self.delegate?.didStartSelect()
+                    self.delegate?.didStopSelect(view: self)
                 }
             }
         }
