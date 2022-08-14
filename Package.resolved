@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "ghgungnircore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/XbikeJavierBC/ghgungnircore.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d593f0e44fb48d423414048c17bb804ceba930a2"
+      }
+    },
+    {
+      "identity" : "ghmjolnircore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/XbikeJavierBC/ghmjolnircore.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "000343569727af1ebd1624cc8f0eea838f92a5a1"
+      }
+    },
+    {
+      "identity" : "tinyconstraints",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/roberthein/TinyConstraints.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a89996a77d364eb85abdd09d42d2274e35ba56dc"
+      }
+    }
+  ],
+  "version" : 2
+}
