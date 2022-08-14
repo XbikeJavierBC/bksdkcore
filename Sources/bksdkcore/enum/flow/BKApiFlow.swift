@@ -10,7 +10,15 @@ import ghmjolnircore
 
 public enum BKApiFlow: Int {
     case sdk
+    
     case onboarding
+    case extremelySimpleItemOnboarding
+    case seeProgressItemOnboarding
+    case trackTimeItemOnboarding
+    case pageOnBoardingControl
+    
+    case currentRide
+    
     case dashboard
 }
 

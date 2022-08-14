@@ -14,7 +14,7 @@ open class BKBaseViewController: UIViewController, GHBaseViewControllerDelegate 
     public var viewModel: GHBaseViewModelProtocol?
     public var controllerManager: GHManagerController?
     
-    open override var preferredStatusBarStyle: UIStatusBarStyle { .default }
+    open override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     open override var prefersStatusBarHidden: Bool { false }
     
     open override func didReceiveMemoryWarning() {

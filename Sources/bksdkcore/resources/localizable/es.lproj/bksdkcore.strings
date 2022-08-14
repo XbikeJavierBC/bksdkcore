@@ -6,5 +6,7 @@
   Copyright © 2020 GoNet. All rights reserved.
 */
 
-"accept"                      = "Aceptar";
-"decline"                     = "Declinar";
+"accept"    = "Aceptar";
+"error"     = "Error";
+"start"         = "INICIAR";
+"stop"          = "DETENER";

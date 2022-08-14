@@ -9,8 +9,17 @@ import UIKit
 
 public extension UIFont {
     //MARK: ::: REGULAR :::
-    static var abelRegular12: UIFont {
-        UIFont(name: "Abel-Regular", size: 12.0) ?? .systemFont(ofSize: 12.0)
+    static var abelRegular15: UIFont {
+        UIFont(name: "Abel-Regular", size: 15.0) ?? .systemFont(ofSize: 15.0)
+    }
+    static var abelRegular20: UIFont {
+        UIFont(name: "Abel-Regular", size: 20.0) ?? .systemFont(ofSize: 20.0)
+    }
+    static var abelRegular25: UIFont {
+        UIFont(name: "Abel-Regular", size: 25.0) ?? .systemFont(ofSize: 25.0)
+    }
+    static var abelRegular30: UIFont {
+        UIFont(name: "Abel-Regular", size: 30.0) ?? .systemFont(ofSize: 30.0)
     }
 }
 

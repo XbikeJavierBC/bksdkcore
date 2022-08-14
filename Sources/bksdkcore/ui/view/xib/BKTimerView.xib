@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BKTimerView" customModule="bksdkcore">
+            <connections>
+                <outlet property="containerStackView" destination="iZw-my-eyb" id="oKA-HC-6ob"/>
+                <outlet property="containerView" destination="aVm-Q0-uS2" id="D5s-QZ-WVe"/>
+                <outlet property="rootView" destination="iN0-l3-epB" id="qjI-lk-tw6"/>
+                <outlet property="startButton" destination="Ppl-se-Ugr" id="xeA-QP-6dF"/>
+                <outlet property="stopButton" destination="IAt-gN-XqV" id="xmL-R6-h69"/>
+                <outlet property="timerTitleLabel" destination="gui-37-Yi7" id="9Mz-YD-3iA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="397" height="194"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-Q0-uS2" userLabel="containerView">
+                    <rect key="frame" x="0.0" y="0.0" width="397" height="194"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gui-37-Yi7" userLabel="timerTitleLabel">
+                            <rect key="frame" x="8" y="32" width="381" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iZw-my-eyb" userLabel="containerStackView">
+                            <rect key="frame" x="8" y="64" width="381" height="106"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppl-se-Ugr" userLabel="startButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="190.5" height="106"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonAction:" destination="-1" eventType="touchUpInside" id="RHV-fK-Jxt"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAt-gN-XqV" userLabel="stopButton">
+                                    <rect key="frame" x="190.5" y="0.0" width="190.5" height="106"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonAction:" destination="-1" eventType="touchUpInside" id="vg1-DC-qHl"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="iZw-my-eyb" secondAttribute="trailing" constant="8" id="0dG-hj-Ajo"/>
+                        <constraint firstAttribute="trailing" secondItem="gui-37-Yi7" secondAttribute="trailing" constant="8" id="4bu-v9-skS"/>
+                        <constraint firstItem="gui-37-Yi7" firstAttribute="leading" secondItem="aVm-Q0-uS2" secondAttribute="leading" constant="8" id="6XB-cU-680"/>
+                        <constraint firstItem="gui-37-Yi7" firstAttribute="top" secondItem="aVm-Q0-uS2" secondAttribute="top" constant="32" id="9Lf-we-nzZ"/>
+                        <constraint firstItem="iZw-my-eyb" firstAttribute="top" secondItem="gui-37-Yi7" secondAttribute="bottom" constant="32" id="FpX-DP-Cdh"/>
+                        <constraint firstAttribute="bottom" secondItem="iZw-my-eyb" secondAttribute="bottom" constant="24" id="NmL-4g-Spy"/>
+                        <constraint firstItem="iZw-my-eyb" firstAttribute="leading" secondItem="aVm-Q0-uS2" secondAttribute="leading" constant="8" id="XK5-SX-0Hh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="aVm-Q0-uS2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1We-RK-CY5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aVm-Q0-uS2" secondAttribute="trailing" id="5rm-Vr-pHR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="aVm-Q0-uS2" secondAttribute="bottom" id="8Ex-pc-9UL"/>
+                <constraint firstItem="aVm-Q0-uS2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LQ1-vF-jad"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="210.9375" y="-59.154929577464792"/>
+        </view>
+    </objects>
+</document>
