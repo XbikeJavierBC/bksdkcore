@@ -19,6 +19,7 @@ public protocol BKTimerViewDelegate: AnyObject {
 }
 
 public class BKTimerView: UIView {
+    //MARK: IBOutlets
     @IBOutlet var rootView: UIView! {
         didSet {
             rootView.backgroundColor = .clear
@@ -36,7 +37,7 @@ public class BKTimerView: UIView {
         didSet {
             timerTitleLabel.font = .abelRegular25
             timerTitleLabel.textColor = .black
-            timerTitleLabel.text = "00 : 00 : 00"
+            timerTitleLabel.text = self.defaultTimerText
         }
     }
     
@@ -93,6 +94,7 @@ public class BKTimerView: UIView {
         }
     }
     
+    //MARK: Properties
     private lazy var lineView: UIView = {
         let view = UIView()
         view.backgroundColor = .oragenColor
@@ -101,8 +103,16 @@ public class BKTimerView: UIView {
         return view
     }()
     
+    //MARK: Variables
     public weak var delegate: BKTimerViewDelegate?
     
+    private var timer = Timer()
+    private var counter = 0
+    private var currentDate = Date()
+    
+    private let defaultTimerText = "00 : 00 : 00"
+    
+    //MARK: Constructors
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.commonInit()
@@ -113,6 +123,7 @@ public class BKTimerView: UIView {
         self.commonInit()
     }
     
+    //MARK: Functions
     private func commonInit() {
         Bundle.module.loadNibNamed("BKTimerView", owner: self, options: nil)
         self.addSubview(self.rootView)
@@ -120,11 +131,54 @@ public class BKTimerView: UIView {
         self.rootView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
     
+    private func startTimer() {
+        self.currentDate = Date()
+        self.timer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(timerAction),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    @objc func timerAction() {
+        self.counter = Int(Date().timeIntervalSince(self.currentDate))
+        let (h,m,s) = self.hmsFrom(seconds: self.counter)
+        
+        let hours   = self.getStringFrom(seconds: h)
+        let minutes = self.getStringFrom(seconds: m)
+        let seconds = self.getStringFrom(seconds: s)
+        
+        self.timerTitleLabel.text = "\(hours) : \(minutes) : \(seconds)"
+    }
+    
+    private func stopTimer() {
+        self.timer.invalidate()
+    }
+    
+    private func restartComponents() {
+        self.timer.invalidate()
+        self.counter = 0
+        self.timerTitleLabel.text = self.defaultTimerText
+    }
+    
+    private func hmsFrom(seconds: Int) -> (hours: Int, minutes: Int, seconds: Int) {
+        return(seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    private func getStringFrom(seconds: Int) -> String {
+        return seconds < 10 ? "0\(seconds)" : "\(seconds)"
+    }
+    
+    //MARK: IBActions
     @IBAction func buttonAction(_ sender: UIButton) {
         if let buttonType = BKTimerButton(rawValue: sender.tag) {
             if buttonType == .start {
                 if !sender.isSelected {
                     sender.isSelected = true
+                    self.restartComponents()
+                    self.startTimer()
                     self.delegate?.didStartSelect()
                 }
             }
@@ -133,6 +187,7 @@ public class BKTimerView: UIView {
                     self.startButton.isSelected = false
                     sender.isSelected = true
                     
+                    self.stopTimer()
                     self.delegate?.didStartSelect()
                 }
             }
