@@ -10,6 +10,7 @@ import ghmjolnircore
 
 public enum BKApiFlow: Int {
     case sdk
+    case onboarding
 }
 
 public extension BKApiFlow {
