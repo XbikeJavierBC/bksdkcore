@@ -11,6 +11,7 @@ import ghmjolnircore
 public enum BKApiFlow: Int {
     case sdk
     case onboarding
+    case dashboard
 }
 
 public extension BKApiFlow {
