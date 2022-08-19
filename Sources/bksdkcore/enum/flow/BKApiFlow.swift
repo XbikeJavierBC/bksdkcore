@@ -22,6 +22,7 @@ public enum BKApiFlow: Int {
     case detailProgress
     
     case dashboard
+    case dashboardSide
 }
 
 public extension BKApiFlow {

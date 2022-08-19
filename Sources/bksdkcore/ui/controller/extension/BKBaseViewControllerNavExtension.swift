@@ -12,14 +12,33 @@ public extension UIViewController {
     func addNavImageButtonLeft(imageLeft: UIImage?) {
         self.cleanNavButtonLeft()
         
-        var list: [UIBarButtonItem] = []
-        
         let imageButtonItem = UIBarButtonItem(
             image: imageLeft,
             style: .done,
             target: self,
             action: #selector(leftNavButtonSelector)
         )
+        
+        
+        self.navigationItem.leftBarButtonItem = imageButtonItem
+    }
+    
+    func addNavCustomButtonLeft(imageLeft: UIImage?) {
+        self.cleanNavButtonLeft()
+        
+        let tempImage = imageLeft?.imageRendering
+        
+        var list: [UIBarButtonItem] = []
+        
+        let btnProfile = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 35))
+        btnProfile.setImage(tempImage, for: .normal)
+        btnProfile.backgroundColor = .clear
+        btnProfile.layer.masksToBounds = true
+        btnProfile.addTarget(self, action: #selector(leftNavButtonSelector), for: .touchUpInside)
+        btnProfile.tintColor = .white
+        btnProfile.layer.cornerRadius = 12
+        
+        let imageButtonItem = UIBarButtonItem(customView: btnProfile)
         
         list.append(imageButtonItem)
         
